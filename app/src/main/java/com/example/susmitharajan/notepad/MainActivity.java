@@ -40,31 +40,4 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    public void save(View view){
-
-        String store = name.getText().toString();
-        SharedPreferences.Editor editor = sf.edit();
-        editor.putString(saveIt, store);
-        editor.commit();
-
-
-    }
-
-    public void remove(View view){
-
-        name = (EditText) findViewById(R.id.editText);
-        name.setText("");
-
-    }
-
-    public void retrieve(View view){
-
-        name = (EditText) findViewById(R.id.editText);
-        sf = getSharedPreferences(preferences, Context.MODE_PRIVATE);
-
-        if(sf.contains(saveIt)){
-            name.setText(sf.getString(saveIt, ""));
-        }
-
-    }
 }
